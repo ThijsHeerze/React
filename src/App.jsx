@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Route, Routes } from 'react-router-dom';
-import Pokemon from './Pokemon';
 import PokemonOverview from './PokemonOverview';
 import PokemonDetails from './PokemonDetails';
 
