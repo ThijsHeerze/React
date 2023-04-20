@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Pokemon({ name, url, add }) {
-  var [pokemons, setPokemon] = useState({});
+  var [pokemon, setPokemon] = useState({});
   var [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,17 +29,19 @@ function Pokemon({ name, url, add }) {
   return (
     <div className="pokemon">
       <div className='pokemon-details'>
-        <img src={pokemons.sprites.front_default} alt={pokemons.name} />
+      <Link state={{data: pokemon}} to={'/pokemon/' + pokemon.name}>
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        </Link>
         <div>
-          <h2>{capitalizeLetterFirst(pokemons.name)}</h2>
+          <h2>{capitalizeLetterFirst(pokemon.name)}</h2>
           <div>
             <ol>
-              <li>{pokemons.weight / 10}kg</li>
-              <li>{pokemons.height / 10}m</li>
+              <li>{pokemon.weight / 10}kg</li>
+              <li>{pokemon.height / 10}m</li>
             </ol>
           </div>
         </div>
-        <button onClick={() => add(pokemons.name)}>Add to Favorites</button>
+        <button onClick={() => add(pokemon.name)}>Add to Favorites</button>
       </div>
     </div>
   );

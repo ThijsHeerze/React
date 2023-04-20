@@ -1,12 +1,14 @@
-import React from 'react'; // add this line
-// import PokemonDetails from "./PokemonDetails"; // remove this line
+import React from "react";
+import Pokemon from './Pokemon';
 
 function PokemonDetails() {
   return (
-    <div>
-      <h1>PokemonDetails</h1>
-    </div>
-  );
+    Pokemon.map((pokemon) =>
+      <div key={`${pokemon.id}-${pokemon.name}`}>
+        <p>{pokemon.id}</p>
+        <p>{pokemon.name}</p>
+      </div>)
+    )
 }
 
 export default PokemonDetails;

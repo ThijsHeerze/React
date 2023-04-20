@@ -53,10 +53,10 @@ function PokemonOverview() {
   const nextDisabled = pokemons.next == null;
 
   return (
-    <div className="App">
-      <h1>Pokedex</h1>
+    <div className="">
+      <h1 className="">Pokedex</h1>
       <div>
-        <h2>Favoriete Pokemon</h2>
+        <h2 className="">Favoriete Pokemon</h2>
         <div>
           <ul>
             {favoPokemons.map(favoPokemons => {
