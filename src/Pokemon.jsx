@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css';
 
 function Pokemon({ name, url, add }) {
   var [pokemon, setPokemon] = useState({});
@@ -41,7 +42,7 @@ function Pokemon({ name, url, add }) {
             </ol>
           </div>
         </div>
-        <button onClick={() => add(pokemon.name)}>Add to Favorites</button>
+        <button className='button' onClick={() => add(pokemon.name)}>Add to Favorites</button>
       </div>
     </div>
   );

@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import Pokemon from './Pokemon';
+import './App.css';
 
 function PokemonOverview() {
-  // var [counter, setCounter] = useState(1);
   var [pokemons, setPokemons] = useState([]);
   var [loading, setLoading] = useState(true);
   var [favoPokemons, setFavoPokemons] = useState([]);
 
   useEffect(() => {
-    // let { state } = useLocation();
     fetch("https://pokeapi.co/api/v2/pokemon")
       .then((response) => response.json())
       .then((data) => {
@@ -53,8 +52,8 @@ function PokemonOverview() {
   const nextDisabled = pokemons.next == null;
 
   return (
-    <div className="">
-      <h1 className="">Pokedex</h1>
+    <div className="pokemon">
+      <h1 className="pokemon-list">Pokedex</h1>
       <div>
         <h2 className="">Favoriete Pokemon</h2>
         <div>
@@ -68,8 +67,8 @@ function PokemonOverview() {
           </ul>
         </div>
         <div>
-          <button onClick={getPreviousResults} disabled={previousDisabled}>Vorige</button>
-          <button onClick={getNextResults} disabled={nextDisabled}>Volgende</button>
+          <button className='button' onClick={getPreviousResults} disabled={previousDisabled}>Vorige</button>
+          <button className='button' onClick={getNextResults} disabled={nextDisabled}>Volgende</button>
         </div>
       </div>
       <div className='pokemon-list'>
